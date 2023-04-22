@@ -1,0 +1,15 @@
+.input-search{
+    margin-left: 4%;
+}
+.filter-col{
+    display: flex;
+    justify-content: flex-end;
+}
+.dropdown{
+    margin-right: 4%;
+
+}
+.dropdown button{   
+    background-color: #FFF;
+    color: #000;
+}
