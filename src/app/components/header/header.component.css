@@ -1,0 +1,14 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #CCC solid 1px;
+}
+.first-column{
+    margin-left: 2%;
+}
+.second-column{
+    margin-right: 2%;
+}
+.title{
+    font-weight: bold;
+}
