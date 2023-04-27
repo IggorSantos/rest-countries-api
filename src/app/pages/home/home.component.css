@@ -1,5 +1,7 @@
 .input-search{
     margin-left: 4%;
+    width: 300px;
+    height: 35px;
 }
 .filter-col{
     display: flex;
