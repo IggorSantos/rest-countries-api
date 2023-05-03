@@ -6,11 +6,15 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class HomeServiceService {
-  baseUrl = "https://restcountries.com/v3.1/all"
+  baseUrl = "https://restcountries.com/v3.1"
 
   constructor(private http: HttpClient) { }
 
   getCountries(){
-    return this.http.get(this.baseUrl)
+    return this.http.get(`${this.baseUrl}/all`)
+  }
+
+  getCountry(name: string){
+    return this.http.get(`${this.baseUrl}/name/${name}`)
   }
 }
