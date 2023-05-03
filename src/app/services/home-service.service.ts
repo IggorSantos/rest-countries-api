@@ -15,6 +15,6 @@ export class HomeServiceService {
   }
 
   getCountry(name: string){
-    return this.http.get(`${this.baseUrl}/name/${name}`)
+    return this.http.get(`${this.baseUrl}/alpha?codes=${name}`)
   }
 }
