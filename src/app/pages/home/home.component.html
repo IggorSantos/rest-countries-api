@@ -6,14 +6,14 @@
         <div class="col-6 filter-col">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Filter by Region
+                  Filter by {{region}}
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">África</a></li>
-                  <li><a class="dropdown-item" href="#">Ameríca</a></li>
-                  <li><a class="dropdown-item" href="#">Asia</a></li>
-                  <li><a class="dropdown-item" href="#">Europe</a></li>
-                  <li><a class="dropdown-item" href="#">Oceania</a></li>
+                  <li (click)="searchRegion('africa')"><a class="dropdown-item" href="#">África</a></li>
+                  <li (click)="searchRegion('america')"><a class="dropdown-item" href="#">Ameríca</a></li>
+                  <li (click)="searchRegion('asia')"><a class="dropdown-item" href="#">Asia</a></li>
+                  <li (click)="searchRegion('europe')"><a class="dropdown-item" href="#">Europe</a></li>
+                  <li (click)="searchRegion('oceania')"><a class="dropdown-item" href="#">Oceania</a></li>
                 </ul>
               </div>
         </div>
