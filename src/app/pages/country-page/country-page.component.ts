@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { HomeServiceService } from 'src/app/services/home-service.service';
 
@@ -9,9 +10,13 @@ import { HomeServiceService } from 'src/app/services/home-service.service';
 })
 export class CountryPageComponent implements OnInit {
   country: any;
+  languages: any;
   idCountry: string = '';
 
-  constructor(private router: ActivatedRoute, private service: HomeServiceService) { }
+  constructor(private router: ActivatedRoute,
+              private service: HomeServiceService,
+              private location: Location
+              ) { }
 
   ngOnInit(): void {
     this.router.queryParams.subscribe(params => {
@@ -26,11 +31,21 @@ export class CountryPageComponent implements OnInit {
       next: (res: any)=> {
         this.country = res
         console.log(this.country)
+        this.getLanguages(this.country)
       },
       error: (err: any) => {
         console.error(err)
       }
     })
+  }
+
+  getLanguages(country: any){
+    this.languages = Object.values(this.country[0].languages)
+    console.log(this.languages)
+  }
+
+  back(){
+    this.location.back()
   }
 
 }

@@ -1,20 +1,27 @@
 <main>
     <div class="container">
         <div class="row mt-5">
-            <button class="back"><i class="bi bi-arrow-left"></i>Voltar</button>
+            <button (click)="back()"class="back"><i class="bi bi-arrow-left"></i>Voltar</button>
         </div>
         <div class="row mt-3">
             <div class="col-md-6">
-                <img src={{this.country[0].flags.png}} class="img-flag" alt="...">                
+                <img src={{this.country[0]?.flags?.png}} class="img-flag" alt="...">                
             </div>
             <div class="col-md-6">
-                <p>{{this.country[0].name.common}}</p>
+                <p class="countryName">{{this.country[0]?.name.common}}</p>
                 <div class="row">
-                    <div class="col-md-6">
-                        Native Name: {{this.country[0].name.nativeName.fra.official}}
+                    <div class="col-md-6 d-flex flex-column">
+                        <b>Native Name:</b> {{this.country[0]?.name.official}}
+                        <b>Region:</b> {{this.country[0]?.region}}
+                        <b>Capital:</b> {{this.country[0]?.capital[0]}}
                     </div>
-                    <div class="col-md-6">
-                        Population: {{this.country[0].population}}
+                    <div class="col-md-6 d-flex flex-column">
+                        <b>Population:</b> {{this.country[0]?.population}}
+                        <b>Top Level Domain:</b> {{this.country[0]?.tld[0]}}    
+                        <b>Languages: </b> 
+                        <ng-container *ngFor="let lang of languages">
+                            {{lang}},
+                        </ng-container>                 
                     </div>
                 </div>
             </div>

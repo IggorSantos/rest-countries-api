@@ -1,3 +1,10 @@
 .back{
     width: 90px;
 }
+.img-flag{
+    width: 100%;
+}
+.countryName{
+    font-weight: bold;
+    font-size: 26px;
+}
