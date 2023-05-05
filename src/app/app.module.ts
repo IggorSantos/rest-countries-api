@@ -5,14 +5,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { SearchComponent } from './pages/search/search.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SearchComponent
+    HeaderComponent        
   ],
   imports: [
     BrowserModule,
