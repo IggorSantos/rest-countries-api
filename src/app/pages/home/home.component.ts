@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
 import { HomeServiceService } from 'src/app/services/home-service.service';
 
 @Component({
@@ -7,16 +9,25 @@ import { HomeServiceService } from 'src/app/services/home-service.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  form: FormGroup | any = '';
   countries: any;
   countriesByRegion: any;
   region: string = 'Region';
 
   constructor(
-    private homeService: HomeServiceService
+    private homeService: HomeServiceService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.buildForm()
     this.getCountries()
+  }
+
+  buildForm(){
+    this.form = new FormGroup({
+      term: new FormControl('')
+    })
   }
 
   getCountries(){
@@ -61,6 +72,11 @@ export class HomeComponent implements OnInit {
         console.log(err)
       }
     })
+  }
+
+  searchCountry(){
+    console.log(this.form.value)
+    this.router.navigate(['/search', { search:JSON.stringify(this.form.value.term)}])
   }
 
 }

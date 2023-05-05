@@ -1,7 +1,12 @@
 <main class="body-page">
     <div class="row mt-3">
         <div class="col-6">
-            <input class="input-search" type="text" placeholder="Search for a country ...">
+          <div class="input-div">
+            <form [formGroup]="form">
+              <i class="bi bi-search" (click)="searchCountry()"></i>
+              <input formControlName="term" class="input-search" type="text" placeholder="Search for a country ...">
+            </form>            
+          </div>
         </div>
         <div class="col-6 filter-col">
             <div class="dropdown">
