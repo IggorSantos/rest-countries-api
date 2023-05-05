@@ -21,4 +21,8 @@ export class HomeServiceService {
   getCountriesByRegion(name: string){
     return this.http.get(`${this.baseUrl}/region/${name}`)
   }
+
+  getSearchCountry(search: string){
+    return this.http.get(`${this.baseUrl}/name/${search}`)
+  }
 }
