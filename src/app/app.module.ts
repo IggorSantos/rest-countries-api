@@ -4,18 +4,18 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { SharedComponentsModule } from './components/shared-components.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent        
+    AppComponent      
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    SharedComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
