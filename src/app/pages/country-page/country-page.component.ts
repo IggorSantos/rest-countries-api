@@ -25,11 +25,11 @@ export class CountryPageComponent implements OnInit {
       this.idCountry = JSON.parse(this.router.snapshot.params['country']);
       console.log(this.idCountry)
     })
-    this.getCountry()
+    this.getCountry(this.idCountry)
   }
 
-  getCountry(){
-    this.service.getCountry(this.idCountry).subscribe({
+  getCountry(idCountry: string){
+    this.service.getCountry(idCountry).subscribe({
       next: (res: any)=> {
         this.country = res
         console.log(this.country)
@@ -49,22 +49,7 @@ export class CountryPageComponent implements OnInit {
 
   getBorders(country: any){
     this.borders = Object.values(this.country[0].borders)
-    console.log(this.borders)
-    this.borders.forEach((border) => {
-      this.service.getCountry(border).subscribe({
-        next: (res: any)=> {
-          this.borderCountries.push(res)
-          //console.log(this.borderCountries)
-        },
-        error: (err: any) => {
-          console.error(err)
-        }
-      })
-    })
-    setTimeout(() => {
-      console.log(this.borderCountries)
-    }, 3000)
-    
+    console.log(this.borders)    
   }
 
   back(){
