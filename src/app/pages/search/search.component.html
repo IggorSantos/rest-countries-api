@@ -1,7 +1,7 @@
 <main class="body-page">    
 
     <div class="container mt-3">
-      <div *ngIf="countries.length > 0" class="row">
+      <div *ngIf="countries?.length > 0" class="row">
         <div class="col-md-3 mt-3" *ngFor="let country of countries">
           <app-card [country]="country"></app-card>
         </div>        
@@ -10,8 +10,9 @@
     </div>
 
     <div class="container mt-3">
-        <div *ngIf="countries.length == 0" class="row">
+        <div *ngIf="exists == false" class="row">
           <div class="col-md-3 mt-3">
+            <button (click)="back()"class="back"><i class="bi bi-arrow-left"></i>Voltar</button>
             <p>Não foram encontrados resultados</p>
           </div>        
         </div>

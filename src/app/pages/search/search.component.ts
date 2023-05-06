@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { HomeServiceService } from 'src/app/services/home-service.service';
 
@@ -10,8 +11,12 @@ import { HomeServiceService } from 'src/app/services/home-service.service';
 export class SearchComponent implements OnInit {
   search: string = '';
   countries: any;
+  exists: boolean = true;
 
-  constructor(private activated: ActivatedRoute, private service: HomeServiceService) { }
+  constructor(private activated: ActivatedRoute,
+              private service: HomeServiceService,
+              private location: Location
+              ) { }
 
   ngOnInit(): void {
     this.search = this.activated.snapshot.params['search']
@@ -27,9 +32,14 @@ export class SearchComponent implements OnInit {
         this.countries = res
       },
       error: (err: any) => {
+        this.exists = false
         console.error(err)
       }
     })
+  }
+
+  back(){
+    this.location.back()
   }
 
 }
