@@ -3,8 +3,8 @@
         <div class="col-6">
           <div class="input-div">
             <form [formGroup]="form">
-              <i class="bi bi-search" (click)="searchCountry()"></i>
-              <input formControlName="term" class="input-search" type="text" placeholder="Search for a country ...">
+              <i class="bi bi-search"  (click)="searchCountry()"></i>
+              <input formControlName="term" (keydown.enter)="searchCountryPress($event)" class="input-search" type="text" placeholder="Search for a country ...">
             </form>            
           </div>
         </div>

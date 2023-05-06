@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   buildForm(){
     this.form = new FormGroup({
-      term: new FormControl('')
+      term: new FormControl(' ')
     })
   }
 
@@ -75,6 +75,17 @@ export class HomeComponent implements OnInit {
   }
 
   searchCountry(){
+    console.log(this.form.value.term)
+    if(this.form.value.term == ' '){
+      console.log("String vazia")
+    }else{
+      this.router.navigate(['/search', { search:JSON.stringify(this.form.value.term)}])
+    }
+    
+  }
+
+  searchCountryPress(event: any){
+    console.log(event.target.value)
     console.log(this.form.value)
     this.router.navigate(['/search', { search:JSON.stringify(this.form.value.term)}])
   }
