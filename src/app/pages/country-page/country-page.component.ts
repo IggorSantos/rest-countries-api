@@ -11,6 +11,8 @@ import { HomeServiceService } from 'src/app/services/home-service.service';
 export class CountryPageComponent implements OnInit {
   country: any;
   languages: any;
+  borders: Array<string> = [];
+  borderCountries: Array<string> = [];
   idCountry: string = '';
 
   constructor(private router: ActivatedRoute,
@@ -32,6 +34,7 @@ export class CountryPageComponent implements OnInit {
         this.country = res
         console.log(this.country)
         this.getLanguages(this.country)
+        this.getBorders(this.country)
       },
       error: (err: any) => {
         console.error(err)
@@ -42,6 +45,26 @@ export class CountryPageComponent implements OnInit {
   getLanguages(country: any){
     this.languages = Object.values(this.country[0].languages)
     console.log(this.languages)
+  }
+
+  getBorders(country: any){
+    this.borders = Object.values(this.country[0].borders)
+    console.log(this.borders)
+    this.borders.forEach((border) => {
+      this.service.getCountry(border).subscribe({
+        next: (res: any)=> {
+          this.borderCountries.push(res)
+          //console.log(this.borderCountries)
+        },
+        error: (err: any) => {
+          console.error(err)
+        }
+      })
+    })
+    setTimeout(() => {
+      console.log(this.borderCountries)
+    }, 3000)
+    
   }
 
   back(){
