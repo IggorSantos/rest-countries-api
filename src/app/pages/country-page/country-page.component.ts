@@ -10,7 +10,7 @@ import { HomeServiceService } from 'src/app/services/home-service.service';
 })
 export class CountryPageComponent implements OnInit {
   country: any;
-  languages: any;
+  languages: Array<string> = [];
   borders: Array<string> = [];
   borderCountries: Array<string> = [];
   idCountry: string = '';
