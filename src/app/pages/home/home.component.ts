@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HomeServiceService } from 'src/app/services/home-service.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-home',
@@ -78,6 +79,13 @@ export class HomeComponent implements OnInit {
     console.log(this.form.value.term)
     if(this.form.value.term == ' '){
       console.log("String vazia")
+      Swal.fire({
+        title: 'Erro!',
+        text: 'Digite algum país que queira pesquisar',
+        icon: 'error',
+        timer: 3000,
+        showConfirmButton: false
+      })
     }else{
       this.router.navigate(['/search', { search:JSON.stringify(this.form.value.term)}])
     }
@@ -86,8 +94,19 @@ export class HomeComponent implements OnInit {
 
   searchCountryPress(event: any){
     console.log(event.target.value)
-    console.log(this.form.value)
+    if(event.target.value == " "){
+      console.log("String vazia")
+      Swal.fire({
+        title: 'Erro!',
+        text: 'Digite algum país que queira pesquisar',
+        icon: 'error',
+        timer: 3000,
+        showConfirmButton: false
+      })
+    }else{
+      console.log(this.form.value)
     this.router.navigate(['/search', { search:JSON.stringify(this.form.value.term)}])
+    }    
   }
 
 }
