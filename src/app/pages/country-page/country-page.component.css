@@ -13,3 +13,9 @@
     margin-left: 2%;
     cursor: pointer;
 }
+b{
+    color: var(--color-text);
+}
+p{
+    color: var(--color-text);
+}

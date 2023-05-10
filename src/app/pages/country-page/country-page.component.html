@@ -11,16 +11,16 @@
                 <p class="countryName">{{this.country[0]?.name.common}}</p>
                 <div class="row">
                     <div class="col-md-6 d-flex flex-column">
-                        <b>Native Name:</b> {{this.country[0]?.name.official}}
-                        <b>Region:</b> {{this.country[0]?.region}}
-                        <b>Capital:</b> {{this.country[0]?.capital[0]}}
+                        <b>Native Name:</b> <p>{{this.country[0]?.name.official}}</p>
+                        <b>Region:</b> <p>{{this.country[0]?.region}}</p>
+                        <b>Capital:</b> <p>{{this.country[0]?.capital[0]}}</p>
                     </div>
                     <div class="col-md-6 d-flex flex-column">
-                        <b>Population:</b> {{this.country[0]?.population}}
-                        <b>Top Level Domain:</b> {{this.country[0]?.tld[0]}}    
+                        <b>Population:</b> <p>{{this.country[0]?.population}}</p>
+                        <b>Top Level Domain:</b> <p>{{this.country[0]?.tld[0]}}   </p> 
                         <b>Languages: </b> 
                         <ng-container *ngFor="let lang of languages">
-                            {{lang}},
+                            <p>{{lang}},</p>
                         </ng-container>                 
                     </div>
                 </div>

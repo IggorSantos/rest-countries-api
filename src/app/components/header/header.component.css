@@ -12,4 +12,9 @@ nav{
 .title{
     font-weight: bold;
     cursor: pointer;
+    color: var(--color-text);
+}
+.darkMode{
+    cursor: pointer;
+    color: var(--color-text);
 }
