@@ -16,7 +16,7 @@
                         <b>Capital:</b> <p>{{this.country[0]?.capital[0]}}</p>
                     </div>
                     <div class="col-md-6 d-flex flex-column">
-                        <b>Population:</b> <p>{{this.country[0]?.population}}</p>
+                        <b>Population:</b> <p>{{this.country[0]?.population | number: '1.0-0'}}</p>
                         <b>Top Level Domain:</b> <p>{{this.country[0]?.tld[0]}}   </p> 
                         <b>Languages: </b> 
                         <ng-container *ngFor="let lang of languages">
