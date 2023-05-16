@@ -18,7 +18,7 @@ Se trata de um site que consume uma api de países. Nela podemos pesquisar um pa
 
 ## Uso
 
-Para rodar o projeto, primeiro é preciso clona=lo, depois é necessario rodar o comando npm install para instalar as dependencias e para finalizar é necessario rodar o ng serve
+Para rodar o projeto, primeiro é preciso clona-lo, depois é necessario rodar o comando npm install para instalar as dependencias e para finalizar é necessario rodar o ng serve
 
 
 
